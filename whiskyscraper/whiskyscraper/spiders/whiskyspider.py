@@ -1,5 +1,6 @@
 import scrapy
 from whiskyscraper.items import WhiskyscraperItem
+from scrapy.loader import ItemLoader
 
 
 class WhiskeySpider(scrapy.Spider):
@@ -7,16 +8,19 @@ class WhiskeySpider(scrapy.Spider):
     start_urls = ["https://www.whiskyshop.com/single-malt-scotch-whisky?item_availability=In+Stock"]
 
     def parse(self, response):
-        # Instantiate item object
-        item = WhiskyscraperItem()
         
-        # Scrape name, price and link from each item
+        # Iterate through each item
         for product in response.css("div.product-item-info"):
-            item["name"] = product.css("a.product-item-link::text").get(),
-            item["price"] = product.css("span.price::text").get().replace("£", ""),
-            item["link"] = product.css("a.product-item-link").attrib["href"],
+            # Instantiate loader object
+            loader = ItemLoader(item=WhiskyscraperItem(), selector=product)
+            
+            # Scrape items name, price and link with CSS Selectors and pass
+            # them to ItemLoader for being processed in items.py
+            loader.add_css("name", "a.product-item-link")
+            loader.add_css("price", "span.price")
+            loader.add_css("link", "a.product-item-link::atrr(href)")
 
-            yield item
+            yield loader.load_item()  # sends scrape data to items.py
 
         # Go to next page and call parse func
         next_page = response.css("a.action.next").attrib["href"]
