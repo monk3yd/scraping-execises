@@ -1,5 +1,6 @@
 # Complete Beginner Example Web Scraping with Scrapy
-https://www.youtube.com/watch?v=s4jtkzHhLzY&t=247s
+Setup Spider: https://www.youtube.com/watch?v=s4jtkzHhLzY&t=247s
+Setup Item and Itemloader: https://www.youtube.com/watch?v=wyE4oDxScfE
 
 > Comment: project can't be finished as in the video because the page needs to be rendered (Enable JavaScript and cookies to continue)
 
