@@ -1,14 +1,17 @@
 # Complete Beginner Example Web Scraping with Scrapy
-> https://www.youtube.com/watch?v=s4jtkzHhLzY&t=247s
-Comment: project can't be finished as in the video because the page needs to be rendered (Enable JavaScript and cookies to continue)
-Fix: use scrapy-playwright
+https://www.youtube.com/watch?v=s4jtkzHhLzY&t=247s
+
+> Comment: project can't be finished as in the video because the page needs to be rendered (Enable JavaScript and cookies to continue)
+
+>Fix: use scrapy-playwright
+
 > Tip: use the **scrapy shell** to interrogate the html 
 
 ## Scrapy Shell
 Start:
 `scrapy shell`
 
-Use fetch command to request to url
+Use fetch command:
 `> fetch("https://www.whiskyshop.com/single-malt-scotch-whisky?item_availability=In+Stock")`
 
 The response is automatically saved in a response variable 
@@ -25,6 +28,5 @@ Manage response which contain the html by using CSS Selectors:
 `response.css("div.product-item-info").get_all()` 
 
 - Iterate through elements
-`products = response.css("div.product-item-info")
- len(products)
-`
+`products = response.css("div.product-item-info")`
+`len(products)`
