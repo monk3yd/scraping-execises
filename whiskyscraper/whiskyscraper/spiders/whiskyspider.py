@@ -16,6 +16,8 @@ class WhiskeySpider(scrapy.Spider):
             item["price"] = product.css("span.price::text").get().replace("£", ""),
             item["link"] = product.css("a.product-item-link").attrib["href"],
 
+            yield item
+
         # Go to next page and call parse func
         next_page = response.css("a.action.next").attrib["href"]
         if next_page is not None:
