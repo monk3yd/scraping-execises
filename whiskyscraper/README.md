@@ -1,4 +1,5 @@
 # Complete Beginner Example Web Scraping with Scrapy
+> https://www.youtube.com/watch?v=s4jtkzHhLzY&t=247s
 
 Start scrapy shell:
 `scrapy shell`
