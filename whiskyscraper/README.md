@@ -51,5 +51,6 @@ Manage response which contain the html by using CSS Selectors:
 ## Assemblying Spider
 1. Create Spider
 2. Parse response using .supra data
-3. Iterate through all pages
+3. Find next button
+4. Iterate through all pages
 

@@ -19,3 +19,7 @@ class WhiskeySpider(scrapy.Spider):
                     "price": "sold out",
                     "link": product.css("a.product-item-link").attrib["href"],
                 }
+
+        next_page = response.css("a.action.next").attrib["href"]
+        if next_page is not None:
+            yield response.follow(next_page, callback=self.parse)
