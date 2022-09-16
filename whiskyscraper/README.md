@@ -6,6 +6,7 @@ https://www.youtube.com/watch?v=s4jtkzHhLzY&t=247s
 >Fix: use scrapy-playwright
 
 > Tip: use the **scrapy shell** to interrogate the html 
+> Tip: Workflow when web scraping: request-parse-output/extract-transform-load
 
 ## Scrapy Shell
 Start:
@@ -50,4 +51,5 @@ Manage response which contain the html by using CSS Selectors:
 ## Assemblying Spider
 1. Create Spider
 2. Parse response using .supra data
+3. Iterate through all pages
 
