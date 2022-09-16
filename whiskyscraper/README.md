@@ -55,3 +55,8 @@ Manage response which contain the html by using CSS Selectors:
 3. Find next button
 4. Iterate through all pages
 
+
+## Item and ItemLoader
+1. Define item fields in item.py 
+2. Instantiate item in spider.py
+3. Associate item with respective scraped data

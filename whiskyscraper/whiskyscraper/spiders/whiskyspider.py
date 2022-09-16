@@ -12,11 +12,9 @@ class WhiskeySpider(scrapy.Spider):
         
         # Scrape name, price and link from each item
         for product in response.css("div.product-item-info"):
-            yield {
-                "name": product.css("a.product-item-link::text").get(),
-                "price": product.css("span.price::text").get().replace("£", ""),
-                "link": product.css("a.product-item-link").attrib["href"],
-            }
+            item["name"] = product.css("a.product-item-link::text").get(),
+            item["price"] = product.css("span.price::text").get().replace("£", ""),
+            item["link"] = product.css("a.product-item-link").attrib["href"],
 
         # Go to next page and call parse func
         next_page = response.css("a.action.next").attrib["href"]
