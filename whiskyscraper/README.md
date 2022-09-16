@@ -58,5 +58,7 @@ Manage response which contain the html by using CSS Selectors:
 
 ## Item and ItemLoader
 1. Define item fields in item.py 
-2. Instantiate item in spider.py
-3. Associate item with respective scraped data
+2. Instantiate ItemLoader in spider.py
+    2.1 create items through it
+    2.2 associate and load scraped items into items.py
+3. Use MapCompose to transform items' data sent from spider.py
