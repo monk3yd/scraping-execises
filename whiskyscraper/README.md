@@ -25,8 +25,29 @@ Manage response which contain the html by using CSS Selectors:
 `response.css("div.product-item-info").get()` 
 
 - Select list of all matched items (html)
-`response.css("div.product-item-info").get_all()` 
+`response.css("div.product-item-info").getall()` 
 
 - Iterate through elements
 `products = response.css("div.product-item-info")`
 `len(products)`
+
+- Select link of product
+`products.css("a.product-item-link").get()`
+
+- Get text from link element
+`products.css("a.product-item-link::text").get()`
+
+- Get list of text items from all link elements in page
+`products.css("a.product-item-link::text").getall()`
+
+- Get text from link element and replace char
+`products.css("span.price::text").get().replace("£", "")`
+
+- Get href from link element
+`products.css("a.product-item-link").attrib["href"]`
+
+
+## Assemblying Spider
+1. Create Spider
+2. Parse response using .supra data
+
